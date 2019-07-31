@@ -48,6 +48,11 @@ Sub EasyChallenge()
 End Sub
 
 Sub ClearEasy()
+    ws.Range("I1:J289").ClearContents
+    ws.Range("I1:J289").ClearFormats
+End Sub
+
+Sub ClearEasyChallenge()
     For Each ws In Worksheets
         ws.Range("I1:J289").ClearContents
         ws.Range("I1:J289").ClearFormats
