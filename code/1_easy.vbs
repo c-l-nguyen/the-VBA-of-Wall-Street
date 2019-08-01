@@ -12,6 +12,7 @@ Sub Easy()
     For i = 2 To Cells(Rows.Count, 1).End(xlUp).Row
         total_vol = total_vol + Cells(i, 7).Value
         ticker = Cells(i, 1).Value
+        ' If different ticker value, then summarize and reset volume count
         If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
             Cells(ticker_counter, 9).Value = ticker
             Cells(ticker_counter, 10).Value = total_vol
@@ -40,6 +41,7 @@ Sub EasyChallenge()
         For i = 2 To ws.Cells(Rows.Count, 1).End(xlUp).Row
             total_vol = total_vol + ws.Cells(i, 7).Value
             ticker = ws.Cells(i, 1).Value
+            ' If different ticker value, then summarize and reset volume count
             If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
                 ws.Cells(ticker_counter, 9).Value = ticker
                 ws.Cells(ticker_counter, 10).Value = total_vol

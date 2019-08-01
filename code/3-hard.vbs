@@ -11,12 +11,13 @@ Sub Hard()
     Dim rownum As Integer
     Dim min_row_index, max_row_index, max_total_vol_index As Integer
     Dim max_total_vol As Double
+
     max = 0
     min = 0
-    max_total_vol = 0
-    rownum = Cells(Rows.Count, 9).End(xlUp).Row
+    max_total_vol = 0 
     
-    For i = 2 To rownum
+    For i = 2 To Cells(Rows.Count, 9).End(xlUp).Row
+        ' replace min/max percentage change if we find lower/higher value
         If Cells(i, 11) > max Then
             max = Cells(i, 11)
             max_row_index = i
@@ -27,12 +28,14 @@ Sub Hard()
             min_row_index = i
         End If
         
+        ' replace max total volume value if higher value found
         If Cells(i, 12) > max_total_vol Then
             max_total_vol = Cells(i, 12)
             max_total_vol_index = i
         End If
     Next i
     
+    ' Write out the values to specified cells
     Range("P2") = Cells(max_row_index, 9).Value
     Range("P3") = Cells(min_row_index, 9).Value
     Range("P4") = Cells(max_total_vol_index, 9).Value
@@ -59,15 +62,15 @@ Sub HardChallenge()
         ws.Range("Q1") = "Value"
         
         Dim max, min As Double
-        Dim rownum As Integer
         Dim min_row_index, max_row_index, max_total_vol_index As Integer
         Dim max_total_vol As Double
+        
         max = 0
         min = 0
         max_total_vol = 0
-        rownum = ws.Cells(Rows.Count, 9).End(xlUp).Row
         
-        For i = 2 To rownum
+        For i = 2 To ws.Cells(Rows.Count, 9).End(xlUp).Row
+            ' replace min/max percentage change if we find lower/higher value
             If ws.Cells(i, 11) > max Then
                 max = ws.Cells(i, 11)
                 max_row_index = i
@@ -78,12 +81,14 @@ Sub HardChallenge()
                 min_row_index = i
             End If
             
+            ' replace max total volume value if higher value found
             If ws.Cells(i, 12) > max_total_vol Then
                 max_total_vol = ws.Cells(i, 12)
                 max_total_vol_index = i
             End If
         Next i
         
+        ' Write out the values to specified cells
         ws.Range("P2") = ws.Cells(max_row_index, 9).Value
         ws.Range("P3") = ws.Cells(min_row_index, 9).Value
         ws.Range("P4") = ws.Cells(max_total_vol_index, 9).Value
