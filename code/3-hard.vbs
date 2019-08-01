@@ -43,6 +43,10 @@ Sub Hard()
     
     Range("Q2").NumberFormat = "0.00%"
     Range("Q3").NumberFormat = "0.00%"
+
+    Columns("O").Autofit
+    Columns("P").Autofit
+    Columns("Q").Autofit
 End Sub
 
 Sub HardChallenge()
@@ -90,18 +94,24 @@ Sub HardChallenge()
         
         ws.Range("Q2").NumberFormat = "0.00%"
         ws.Range("Q3").NumberFormat = "0.00%"
+
+        ws.Columns("O").Autofit
+        ws.Columns("P").Autofit
+        ws.Columns("Q").Autofit
     
     Next ws
 End Sub
 
 Sub ClearHard()
-    Range("O1:Q4").ClearContents
-    Range("O1:Q4").ClearFormats
+    Columns("O:Q").ClearContents
+    Columns("O:Q").ClearFormats
+    Columns("O:Q").UseStandardWidth = True
 End Sub
 
 Sub ClearHardChallenge()
     For Each ws In Worksheets
-        ws.Range("O1:Q4").ClearContents
-        ws.Range("O1:Q4").ClearFormats
+        ws.Columns("O:Q").ClearContents
+        ws.Columns("O:Q").ClearFormats
+        ws.Columns("O:Q").UseStandardWidth = True
     Next ws
 End Sub

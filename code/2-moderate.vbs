@@ -16,6 +16,7 @@ Sub Moderate()
     Range("L1").Value = "Total Stock Volume"
     
     For i = 2 To Cells(Rows.Count, 1).End(xlUp).Row
+
         total_vol = total_vol + Cells(i, 7).Value
         ticker = Cells(i, 1).Value
         yearly_open = Cells(ticker_row_counter, 3)
@@ -24,7 +25,11 @@ Sub Moderate()
             yearly_end = Cells(i, 6)
             Cells(ticker_counter, 9).Value = ticker
             Cells(ticker_counter, 10).Value = yearly_end - yearly_open
-            Cells(ticker_counter, 11).Value = (yearly_end - yearly_open) / yearly_open
+            If yearly_open = 0 Then
+                Cells(ticker_counter, 11).Value = Null
+            Else
+                Cells(ticker_counter, 11).Value = (yearly_end - yearly_open) / yearly_open
+            End If
             Cells(ticker_counter, 12).Value = total_vol
             
             If Cells(ticker_counter, 10).Value > 0 Then
@@ -41,6 +46,11 @@ Sub Moderate()
         End If
         
     Next i
+
+    Columns("J").Autofit
+    Columns("K").Autofit
+    Columns("L").Autofit
+
 End Sub
 
 Sub ModerateChallenge()
@@ -70,7 +80,11 @@ Sub ModerateChallenge()
                 yearly_end = ws.Cells(i, 6)
                 ws.Cells(ticker_counter, 9).Value = ticker
                 ws.Cells(ticker_counter, 10).Value = yearly_end - yearly_open
-                ws.Cells(ticker_counter, 11).Value = (yearly_end - yearly_open) / yearly_open
+                If yearly_open = 0 Then
+                    ws.Cells(ticker_counter, 11).Value = Null
+                Else
+                    ws.Cells(ticker_counter, 11).Value = (yearly_end - yearly_open) / yearly_open
+                End If
                 ws.Cells(ticker_counter, 12).Value = total_vol
                 
                 If ws.Cells(ticker_counter, 10).Value > 0 Then
@@ -87,17 +101,24 @@ Sub ModerateChallenge()
             End If
             
         Next i
+
+        ws.Columns("J").Autofit
+        ws.Columns("K").Autofit
+        ws.Columns("L").Autofit
+
     Next ws
 End Sub
 
 Sub ClearModerate()
-    Range("I1:L289").ClearContents
-    Range("I1:L289").ClearFormats
+    Columns("I:L").ClearContents
+    Columns("I:L").ClearFormats
+    Columns("I:L").UseStandardWidth = True
 End Sub
 
 Sub ClearModerateChallenge()
     For Each ws In Worksheets
-        ws.Range("I1:L289").ClearContents
-        ws.Range("I1:L289").ClearFormats
+        ws.Columns("I:L").ClearContents
+        ws.Columns("I:L").ClearFormats
+        ws.Columns("I:L").UseStandardWidth = True
     Next ws
 End Sub

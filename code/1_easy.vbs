@@ -19,6 +19,9 @@ Sub Easy()
             ticker_counter = ticker_counter + 1
         End If
     Next i
+
+    Columns("J").Autofit
+
 End Sub
 
 Sub EasyChallenge()
@@ -44,17 +47,23 @@ Sub EasyChallenge()
                 ticker_counter = ticker_counter + 1
             End If
         Next i
+
+        ws.Columns("J").Autofit
+    
     Next ws
+
 End Sub
 
 Sub ClearEasy()
-    ws.Range("I1:J289").ClearContents
-    ws.Range("I1:J289").ClearFormats
+    Columns("I:J").ClearContents
+    Columns("I:J").ClearFormats
+    Columns("I:J").UseStandardWidth = True
 End Sub
 
 Sub ClearEasyChallenge()
     For Each ws In Worksheets
-        ws.Range("I1:J289").ClearContents
-        ws.Range("I1:J289").ClearFormats
+        ws.Columns("I:J").ClearContents
+        ws.Columns("I:J").ClearFormats
+        ws.Columns("I:J").UseStandardWidth = True
     Next ws
 End Sub
