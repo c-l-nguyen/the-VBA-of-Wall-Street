@@ -1,5 +1,6 @@
 Sub Hard()
-' Note: must run moderate exercise first!
+    ' Note: must run moderate exercise first!
+    Call Moderate
 
     Range("O2") = "Greatest % Increase"
     Range("O3") = "Greatest % Decrease"
@@ -53,7 +54,9 @@ Sub Hard()
 End Sub
 
 Sub HardChallenge()
-' Note: must run moderate exercise first!
+    'Note: must run moderate exercise first!
+    Call ModerateChallenge()
+
     For Each ws In Worksheets
         ws.Range("O2") = "Greatest % Increase"
         ws.Range("O3") = "Greatest % Decrease"
@@ -108,12 +111,16 @@ Sub HardChallenge()
 End Sub
 
 Sub ClearHard()
+    Call ClearModerate
+
     Columns("O:Q").ClearContents
     Columns("O:Q").ClearFormats
     Columns("O:Q").UseStandardWidth = True
 End Sub
 
 Sub ClearHardChallenge()
+    Call ClearModerateChallenge
+
     For Each ws In Worksheets
         ws.Columns("O:Q").ClearContents
         ws.Columns("O:Q").ClearFormats

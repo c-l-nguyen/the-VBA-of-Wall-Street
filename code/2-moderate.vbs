@@ -1,7 +1,7 @@
 Sub Moderate()
     Dim total_vol As Double
     Dim ticker As String
-    Dim ticker_counter, ticker_open_close_counter As Integer
+    Dim ticker_counter, ticker_open_close_counter As Double
     Dim yearly_open, yearly_end As Double
     
     total_vol = 0
@@ -61,7 +61,7 @@ End Sub
 Sub ModerateChallenge()
     Dim total_vol As Double
     Dim ticker As String
-    Dim ticker_counter, ticker_open_close_counter As Integer
+    Dim ticker_counter, ticker_open_close_counter As Double
     Dim yearly_open, yearly_end As Double
     
     For Each ws In Worksheets
