@@ -2,6 +2,7 @@
 Excel VBA scripting on stock market data.
 
 Contents:
+
 **/code** - contains VBA code to summarize stock ticker data
 
 **/data** - contains Excel data to test code on (*note* contains 100+MB of data)
