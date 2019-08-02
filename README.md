@@ -2,9 +2,11 @@
 Excel VBA scripting on stock market data.
 
 Contents:
-/code - contains VBA code to summarize stock ticker data
-/data - contains Excel data to test code on (*note* contains 100+MB of data)
-/images - contains screenshots of solution in Excel
+**/code** - contains VBA code to summarize stock ticker data
+
+**/data** - contains Excel data to test code on (*note* contains 100+MB of data)
+
+**/images** - contains screenshots of solution in Excel
 
 Directions: This submission solves the Hard Challenge level. Copy the macro code over to Excel and run the HardChallenge() macro to test the solution.
 
