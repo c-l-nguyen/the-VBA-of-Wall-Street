@@ -1,7 +1,14 @@
 # the-VBA-of-Wall-Street
 Excel VBA scripting on stock market data.
 
-This project uses VBA scripting in Excel to summarize sample stock market data according to three different levels:
+Contents:
+/code - contains VBA code to summarize stock ticker data
+/data - contains Excel data to test code on (*note* contains 100+MB of data)
+/images - contains screenshots of solution in Excel
+
+Directions: This submission solves the Hard Challenge level. Copy the macro code over to Excel and run the HardChallenge() macro to test the solution.
+
+Additionally, this project uses VBA scripting in Excel to summarize sample stock market data according to three different levels:
 
 1. Easy - Returns the following using Easy(), EasyChallenge() macros: 
     * stock ticker symbol
